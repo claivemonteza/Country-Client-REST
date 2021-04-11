@@ -5,7 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NgForm } from '@angular/forms';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { HttpErrorResponse } from '@angular/common/http';
-
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-add-country',
@@ -26,6 +26,7 @@ export class AddCountryComponent implements OnInit {
   
     onNoClick(): void {
       this.dialogRef.close(AddCountryComponent);
+      this.countryService.filter('Add click');
     }
   
     public onAddCountry(addForm: NgForm): void {
@@ -39,12 +40,7 @@ export class AddCountryComponent implements OnInit {
           alert(error.message);
           addForm.reset();
         }
-      );
-
-      this.countryService.getAllCountries().subscribe(data => {
-         HomeComponent.setDataSource(data);
-      });
-     
+      );     
     }
   
 }

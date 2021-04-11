@@ -25,6 +25,7 @@ export class DeleteCountryComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close(DeleteCountryComponent);
+    this.countryService.filter('Delete click');
   }
 
   delete(id: number) {

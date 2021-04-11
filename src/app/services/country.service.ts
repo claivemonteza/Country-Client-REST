@@ -5,6 +5,9 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
+import {Subject} from 'rxjs';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -34,5 +37,13 @@ export class CountryService {
  
    public getAllCountries(){
      return this.http.get<Country[]>(`${this.url}/country/all`);
+   }
+
+   private _listners = new Subject<any>();
+   listen():Observable<any>{
+     return this._listners.asObservable();
+   }
+   filter(filterBy:string){
+     this._listners.next(filterBy);
    }
 }

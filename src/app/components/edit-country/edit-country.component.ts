@@ -2,8 +2,6 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Country } from 'src/app/model/country.model';
 import { CountryService } from 'src/app/services/country.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { NgForm } from '@angular/forms';
-import { HomeComponent } from 'src/app/pages/home/home.component';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -25,6 +23,7 @@ export class EditCountryComponent implements OnInit {
   
     onNoClick(): void {
       this.dialogRef.close(EditCountryComponent);
+      this.countryService.filter('Modify click');
     }
   
     public onUpdateCountry(country:Country): void {

@@ -18,13 +18,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   dataSource: MatTableDataSource<Country>;
   listCountry:any;
-  displayedColumns: string[] = ['name', 'capital', 'region', 'subregion', 'area','settings'];
+  displayedColumns: string[] = ['name', 'capital', 'region', 'subregion', 'area','options'];
  
   @ViewChild(MatSort) sort: MatSort;
   static dataSource: any;
   
   constructor(private countryService: CountryService, public dialog: MatDialog) { 
     this.dataSource = new MatTableDataSource<Country>([]);
+    this.countryService.listen().subscribe((m:any)=>{
+      this.countries();
+    })
   }
 
   ngAfterViewInit() {
