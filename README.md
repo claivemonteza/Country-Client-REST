@@ -1,6 +1,6 @@
 # CountryClientREST
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+TEste projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
 É um Client REST que permite obter e visualizar as informações de propriedades dos países (identificador – gerado automaticamente, nome, capital, região, sub-região, área)
 presentes na API [Country API RESTful](https://github.com/claivemonteza/Country-API-RESTful.git). 
