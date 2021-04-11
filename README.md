@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 É um Client REST que permite obter e visualizar as informações de propriedades dos países (identificador – gerado automaticamente, nome, capital, região, sub-região, área)
 presentes na API [Country API RESTful](https://github.com/claivemonteza/Country-API-RESTful.git). 
+Permite que seja adicionado, alterado e apagado um pais. 
 
 <div align="center">
   <img alt="image" src="https://github.com/claivemonteza/Country-Client-REST/blob/main/Country-client-rest.png">
