@@ -1,0 +1,138 @@
+.sidebar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar button{
+  height: var(--px-1);
+  margin-top: var(--px-2);
+  margin-left: var(--px-3);
+}
+
+mat-toolbar{
+  display: flex;
+  position: sticky;
+  top:0;
+  background:var(--d-element);
+  color: var(--d-text);
+  padding:var(--px-4);
+  justify-content: flex-end;
+  @media (min-width: 376px) {
+    margin: var(--rem-1) var(--rem-1);
+    padding-bottom: var(--px-5);
+  }
+}
+
+mat-form-field{
+  width: var(--per-1);
+  font-size: medium;
+}
+
+mat-form-field-label, mat-label {
+  color: var(--d-text);
+}
+
+
+mat-form-field mat-icon{
+  font-size: var(--p-1);
+}
+
+mat-icon{
+ color: var(--color-1);
+}
+
+.mat-input-element::placeholder {
+  color:  var(--d-text);
+}
+
+.mat-form-field.mat-focused .mat-form-field-label{
+color:var(--d-text);
+}
+
+.mat-form-field.appearence-legacy .mat-form-field-label{
+color: var(--d-text);
+}
+
+.mat-toolbar .mat-focused {
+color: var(--color-1);
+}
+.mat-toolbar .mat-input-element {
+  caret-color: var(--d-text);
+}
+
+.mat-input-element {
+  color: var(--d-text);
+}
+
+.mat-form-field-underline ::-moz-focus-inner{
+   background-color: var(--color-1);
+}
+
+.mat-toolbar .mat-form-field-underline ::-moz-focus-outer{
+   background-color: var(--color-1);
+}
+
+.mat-toolbar .mat-form-field-underline, .mat-toolbar .mat-form-field-ripple, .mat-toolbar .mat-focused .mat-form-field-ripple {
+  background-color: var(--color-1);
+}
+
+
+.mat-stroked-button:not(.mat-button-disabled) {
+  border-color: var(--d-element);
+}
+
+.mat-menu-panel {
+  margin-top: var(--px-6);
+  margin-left: var(--px-7);
+}
+
+.mat-menu-content:not(:empty) {
+  padding-top: var(--px-5);
+  padding-bottom: var(--px-5);
+}
+
+th.mat-header-cell{
+border-bottom-width: var(--px-8);
+border-bottom-style: solid;
+border-bottom-color: var(--color-1);
+}
+
+.table-container{
+  position: relative;
+  height: var(--px-9);
+  overflow: auto;
+}
+
+table {
+    width: var(--per-2);
+    padding: var(--px-10) var(--px-11) var(--px-4);
+      td.mat-cell{
+      border-color: var(--d-element);
+      border-bottom-style: none;
+    }
+    background-color: transparent;
+  }
+  
+  th, td{
+    color: var(--d-text);
+    font-size: medium;
+  }
+  
+  tr.mat-header-row{
+    position: sticky;
+    top:64px;
+    color: var(--white);
+  }
+
+  th.mat-sort-header-sorted {
+    color: var(--white);
+  }
+
+  th.mat-header-cell mat-sort-header-arrow{
+    color: var(--white);
+  }
+
+
+  tr.mat-row {
+    cursor: pointer;
+}

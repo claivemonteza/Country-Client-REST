@@ -1,0 +1,88 @@
+::ng-deep {
+  .mat-dialog-container {
+    background: var(--d-element);
+  }
+}
+
+.dialog-header {
+  background-color: var(--d-element);
+  display: table;
+  table-layout: fixed;
+  width: var(--per-2);
+}
+
+.dialog-header-title {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+}
+
+.dialog-title {
+  margin-left: var(--px-5);
+  font-size: var(--rem-6);
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: var(--rem-7);
+  color: var(--d-text);
+  word-wrap: break-word;
+}
+
+.dialog-header-action .mat-icon {
+  color: var(--d-text);
+}
+
+.dialog-content {
+  max-height: var(--per-3);
+  overflow: auto;
+  position: relative;
+  padding: var(--px-4) var(--px-20);
+  @media (min-width: 376px) {
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: var(--per-4);
+    }
+  }
+}
+
+.mat-dialog-actions {
+  padding: var(--px-5) 0;
+}
+
+.dialog-header-action {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: right;
+  width: var(--per-5);
+  height: var(--px-21);
+}
+
+.form {
+  display: grid;
+}
+
+mat-form-field {
+  font-size: medium;
+}
+
+#hidden {
+  display: none;
+}
+
+.mat-input-element::placeholder {
+  color: var(--d-text);
+}
+
+.mat-input-element {
+  color: var(--d-text);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer button {
+  margin: var(--px-17);
+}

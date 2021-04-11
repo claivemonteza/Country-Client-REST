@@ -1,0 +1,39 @@
+<div class="dialog-header">
+    <div class="dialog-header-title">
+        <div class="dialog-title" role="heading">
+            {{title}}
+        </div>
+    </div>
+    <div class="dialog-header-action" mat-dialog-actions>
+        <button mat-icon-button mat-dialog-close matTooltip="Close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+
+<form #addForm="ngForm" class="form" (ngSubmit)="onAddCountry(addForm)">
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput ngModel name="name" id="name" placeholder="" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Capital</mat-label>
+        <input type="text" matInput ngModel name="capital" id="capital" placeholder="" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Region</mat-label>
+        <input matInput ngModel name="region" id="region" placeholder="" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Subregion</mat-label>
+        <input matInput ngModel name="subregion" id="subregion" placeholder="" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Area</mat-label>
+        <input type="number" matInput ngModel name="area" id="area" placeholder="" required>
+    </mat-form-field>
+    <div class="footer">
+        <button type="submit" id="add-country-form" [disabled]="addForm.invalid" mat-raised-button>Save</button>
+        <button mat-raised-button (click)="onNoClick()" >Cancel</button>
+    </div>
+</form>

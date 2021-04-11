@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+  --white: hsl(0, 0%, 100%);
+
+  --d-bg: hsl(207, 26%, 17%);
+  --d-element: hsl(209, 23%, 22%);
+  --d-text: var(--white);
+
+  --l-bg: hsl(0, 0%, 98%);
+  --l-element: var(--white);
+  --l-text: hsl(200, 15%, 8%);
+  --l-input: hsl(0, 0%, 52%);
+
+
+  --rem-1:0rem;
+  --rem-2:0.4rem;
+  --rem-3:0.5rem;
+  --rem-4:0.8rem;
+  --rem-5:0.6rem;
+  --rem-6:1.4rem;
+  --rem-7:1.75rem;
+
+  --p-1: 11pt;
+
+  --px-1: 35px;
+  --px-2: 22px;
+  --px-3: 17px;
+  --px-4: 20px;
+  --px-5: 0px;
+  --px-6: 15px;
+  --px-7: -11px;
+  --px-8: 2px;
+  --px-9: 480px;
+  --px-10: 104px;
+  --px-11: -1px;
+  --px-12: 50px;
+  --px-13: 16px;
+  --px-14: 6px;
+  --px-15: -8px;
+  --px-16: 1px;
+  --px-17: 10px;
+  --px-18: 4px;
+  --px-19: 14px;
+  --px-20: 25px;
+  --px-21: 40px;
+
+  --per-1: 45%;
+  --per-2: 100%;
+  --per-3: 86%;
+  --per-4: 50%;
+  --per-5: 5%;
+
+  --color-1: #21b1dd;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 800;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.shadow {
+  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background-color: var(--d-element);
+}
+

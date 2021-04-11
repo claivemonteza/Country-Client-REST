@@ -1,0 +1,42 @@
+<div class="dialog-header">
+    <div class="dialog-header-title">
+        <div class="dialog-title" role="heading">
+            {{title}}
+        </div>
+    </div>
+    <div class="dialog-header-action" mat-dialog-actions>
+        <button mat-icon-button mat-dialog-close matTooltip="Close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+
+<form #editForm="ngForm" class="form">
+    <mat-form-field id="hidden" class="example-full-width">
+        <input type="text" ngModel="{{editCountry?.id}}" matInput name="id" id="id" placeholder="id" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input type="text" ngModel="{{editCountry?.name}}" matInput name="name" id="name" placeholder="Name" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Capital</mat-label>
+        <input type="text" ngModel="{{editCountry?.capital}}" matInput name="capital" id="capital" placeholder="Capital" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Region</mat-label>
+        <input ngModel="{{editCountry?.region}}" matInput name="region" id="region" placeholder="Region" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Subregion</mat-label>
+        <input ngModel="{{editCountry?.subregion}}" matInput name="subregion" id="subregion" placeholder="Subregion" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Area</mat-label>
+        <input type="number" ngModel="{{editCountry?.area}}" matInput name="area" id="area"  placeholder="Area">
+    </mat-form-field>
+    <div class="footer">
+        <button type="button" (click)="onUpdateCountry(editForm.value)" [disabled]="editForm.invalid" mat-raised-button>Save</button>
+        <button type="button" mat-raised-button (click)="onNoClick()" >Cancel</button>
+    </div>
+</form>
