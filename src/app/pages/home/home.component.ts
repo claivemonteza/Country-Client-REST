@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
-import { Country } from '../../model/Country.model';
+import { Country } from 'src/app/model/country.model';
 import { CountryService } from 'src/app/services/country.service';
 import { AddCountryComponent } from 'src/app/components/add-country/add-country.component';
 import { EditCountryComponent } from 'src/app/components/edit-country/edit-country.component';
