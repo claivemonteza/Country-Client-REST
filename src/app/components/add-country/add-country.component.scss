@@ -1,11 +1,11 @@
 ::ng-deep {
     .mat-dialog-container {
-      background: var(--d-element);
+      background: var(--l-element);
     }
   }
   
   .dialog-header {
-    background-color: var(--d-element);
+    background-color: var(--l-element);
     display: table;
     table-layout: fixed;
     width: var(--per-2);
@@ -23,12 +23,12 @@
   font-weight: bold;
   letter-spacing: 0;
   line-height: var(--rem-7);
-  color: var(--d-text);
+  color: var(--l-text);
   word-wrap: break-word;
   }
   
   .dialog-header-action .mat-icon {
-    color: var(--d-text);
+    color: var(--l-text);
   }
   
   .dialog-content {
@@ -67,11 +67,11 @@
   }
   
   .mat-input-element::placeholder {
-    color: var(--d-text);
+    color: var(--l-text);
   }
   
   .mat-input-element {
-    color: var(--d-text);
+    color: var(--l-text);
   }
   
   .footer {
