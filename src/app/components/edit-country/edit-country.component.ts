@@ -11,31 +11,30 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class EditCountryComponent implements OnInit {
 
-  title="Modify Country";
-  public editCountry:Country;
+  title = "Modify Country";
+  public editCountry: Country;
 
   constructor(private countryService: CountryService, public dialogRef: MatDialogRef<EditCountryComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Country) {
-      this.editCountry = data;
-     }
-  
-    ngOnInit(): void {}
-  
-    onNoClick(): void {
-      this.dialogRef.close(EditCountryComponent);
-      this.countryService.filter('Modify click');
-    }
-  
-    public onUpdateCountry(country:Country): void {
-      this.countryService.updateCountry(country).subscribe(
-        (response: Country) => {
-          console.log(response);
-          this.onNoClick();
-        },
-        (error: HttpErrorResponse) => {
-          alert(error.message);
-        }
-      );
-    }
+    this.editCountry = data;
+  }
+
+  ngOnInit(): void { }
+
+  cancel(): void {
+    this.dialogRef.close(EditCountryComponent);
+    this.countryService.filter('Modify click');
+  }
+
+  public onUpdateCountry(country: Country): void {
+    this.countryService.updateCountry(country).subscribe(
+      (response: Country) => {
+        this.cancel();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
 
 }

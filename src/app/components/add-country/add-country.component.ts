@@ -24,17 +24,17 @@ export class AddCountryComponent implements OnInit {
   
     ngOnInit(): void {}
   
-    onNoClick(): void {
+    list(): void {
       this.dialogRef.close(AddCountryComponent);
       this.countryService.filter('Add click');
     }
   
-    public onAddCountry(addForm: NgForm): void {
+    public submit(addForm: NgForm): void {
       document.getElementById('add-country-form').click();
       this.countryService.addCountry(addForm.value).subscribe(
         (response: Country) => {
           addForm.reset();
-          this.onNoClick();
+          this.list();
         },
         (error: HttpErrorResponse) => {
           alert(error.message);

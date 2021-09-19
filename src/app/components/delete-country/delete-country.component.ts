@@ -23,7 +23,7 @@ export class DeleteCountryComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onNoClick(): void {
+  cancel(): void {
     this.dialogRef.close(DeleteCountryComponent);
     this.countryService.filter('Delete click');
   }
@@ -31,12 +31,12 @@ export class DeleteCountryComponent implements OnInit {
   delete(id: number) {
     this.countryService.deleteCountry(id).subscribe(
       (response: void) => {
-       
+        this.cancel();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
       }
     );
-    this.onNoClick();
+    this.cancel();
   }
 }

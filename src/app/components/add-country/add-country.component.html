@@ -11,7 +11,7 @@
     </div>
 </div>
 
-<form #addForm="ngForm" class="form" (ngSubmit)="onAddCountry(addForm)">
+<form #addForm="ngForm" class="form" (ngSubmit)="submit(addForm)">
     <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
         <input type="text" matInput ngModel name="name" id="name" placeholder="" required>
@@ -34,6 +34,6 @@
     </mat-form-field>
     <div class="footer">
         <button type="submit" id="add-country-form" [disabled]="addForm.invalid" mat-raised-button>Save</button>
-        <button mat-raised-button (click)="onNoClick()" >Cancel</button>
+        <button mat-raised-button mat-dialog-close>Cancel</button>
     </div>
 </form>

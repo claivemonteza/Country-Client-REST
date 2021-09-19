@@ -13,7 +13,7 @@
 <div class="modal-body">
     <p>Are you sure you want to delete country {{country?.name}}?</p>
     <div class="modal-footer">
-        <button class="button" type="button" (click)="onNoClick()" mat-raised-button>No</button>
+        <button class="button" type="button" (click)="cancel()" mat-raised-button>No</button>
         <button class="button" type="button" (click)="delete(country.id)" mat-raised-button>Yes</button>
     </div>
 </div>
