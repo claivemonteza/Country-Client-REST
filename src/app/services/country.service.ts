@@ -18,25 +18,25 @@ export class CountryService {
   constructor(private http: HttpClient) { }
  
   public addCountry(country: Country):Observable<Country>{
-   return this.http.post<Country>(`${this.url}/country/add`,country);
+   return this.http.post<Country>(`${this.url}/countries/save`,country);
   }
  
   public updateCountry(country: Country): Observable<Country>{
-   return this.http.put<Country>(`${this.url}/country/update`,country);
+   return this.http.put<Country>(`${this.url}/countries/update`,country);
   }
  
   public deleteCountry(id):Observable<void>{
-   return this.http.delete<void>(`${this.url}/country/delete/${id}`);
+   return this.http.delete<void>(`${this.url}/countries/delete/${id}`);
   }
  
   public getCountryByName(name: string): Observable<Country>{
      return this.http
-       .get<Country[]>(`${this.url}/country/name/${name}`)
+       .get<Country[]>(`${this.url}/countries/find/${name}`)
        .pipe(map(([res]) => res));
    }
  
    public getAllCountries(){
-     return this.http.get<Country[]>(`${this.url}/country/all`);
+     return this.http.get<Country[]>(`${this.url}/countries`);
    }
 
    private _listners = new Subject<any>();
