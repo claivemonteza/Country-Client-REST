@@ -1,8 +1,16 @@
-<app-navbar></app-navbar>
 <div class="container" id="main-container">
     <div class="sidebar">
-        <button mat-raised-button (click)="displayDialog(null,'add')">Add</button>
         <mat-toolbar fxFlexLayout="row wrap" fxLayoutGap="20px">
+            <div class='left'>
+                <div class="logo">
+                    <img src="../../../assets/images/global.png" alt="World">
+                    <h1>Country REST</h1>
+                </div>
+                <ul>
+                    <li><a class="fa fa-github" href='https://github.com/claivemonteza/Country-Client-REST.git'>View the project</a>
+                    </li>
+                </ul>
+            </div>
             <mat-form-field>
                 <mat-label>Search</mat-label>
                 <mat-icon matPrefix>search</mat-icon>
@@ -11,6 +19,7 @@
         </mat-toolbar>
     </div>
     <div class="table-container">
+    <button class="add" mat-raised-button (click)="displayDialog(null,'add')">Add</button>
     <table mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>

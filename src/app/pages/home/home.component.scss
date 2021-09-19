@@ -3,23 +3,100 @@
   justify-content: space-between;
 }
 
-.sidebar button{
-  height: var(--px-1);
-  margin-top: var(--px-2);
-  margin-left: var(--px-3);
+
+
+
+.left {
+  display: flex;
+  padding-top: var(--rem-2);
+}
+
+.left .logo{
+  display: flex;
+  margin-right: var(--rem-3);
+  margin-bottom: var(--rem-4);
+}
+
+.logo img{
+    width: var(--px-12);
+}
+
+.left h1 {
+    // -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-weight: bold;
+    font-family: montserrat, sans-serif;
+    font-size: var(--px-13);
+    margin-top: var(--rem-5);
+  }
+
+
+  .left ul,
+  .left li {
+    display: block;
+    float: left;
+  }
+
+  .left li a:hover {
+    color: var(--color-1);
+  }
+
+  .left li a {
+    font-size: var(--rem-5);
+    color:var(--l-text);
+    display: block;
+
+    @media (min-width: 376px) {
+    .left li a {
+      text-decoration: none;
+    }
+  }
+}
+
+@media (min-width: 480px) {
+    .left h1 {
+      float: left;
+      color: var(--color-1);
+    }
+    .left ul {
+      margin-left: var(--px-15);
+  margin-top: var(--rem-5);
+    }
+    .left h1+ul {
+      border-left: solid var(--px-16) var(--d-text);
+      margin-left: var(--px-15);
+    }
+    .left li:last-child {
+      border-right: 0;
+    }
+    .left li a {
+      padding: var(--px-18) var(--px-17);
+      text-decoration: none;
+      margin-top: var(--px-18);
+      margin-left: 10px;
+      border-left: 2px solid;
+    }
+}
+
+.fa-github::before {
+    content: "\f09b";
+    font-size: var(--px-19);
+    color: var(--color-1)
 }
 
 mat-toolbar{
   display: flex;
   position: sticky;
   top:0;
-  background:var(--d-element);
-  color: var(--d-text);
+  background:var(--l-element);
+  color: #21b1dd;
   padding:var(--px-4);
-  justify-content: flex-end;
+
   @media (min-width: 376px) {
     margin: var(--rem-1) var(--rem-1);
     padding-bottom: var(--px-5);
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -29,7 +106,7 @@ mat-form-field{
 }
 
 mat-form-field-label, mat-label {
-  color: var(--d-text);
+  color: var(--l-text);
 }
 
 
@@ -42,26 +119,26 @@ mat-icon{
 }
 
 .mat-input-element::placeholder {
-  color:  var(--d-text);
+  color:  var(--l-text);
 }
 
 .mat-form-field.mat-focused .mat-form-field-label{
-color:var(--d-text);
+color:var(--l-text);
 }
 
 .mat-form-field.appearence-legacy .mat-form-field-label{
-color: var(--d-text);
+color: var(--l-text);
 }
 
 .mat-toolbar .mat-focused {
 color: var(--color-1);
 }
 .mat-toolbar .mat-input-element {
-  caret-color: var(--d-text);
+  caret-color: var(--l-text);
 }
 
 .mat-input-element {
-  color: var(--d-text);
+  color: var(--l-text);
 }
 
 .mat-form-field-underline ::-moz-focus-inner{
@@ -78,7 +155,7 @@ color: var(--color-1);
 
 
 .mat-stroked-button:not(.mat-button-disabled) {
-  border-color: var(--d-element);
+  border-color: var(--l-element);
 }
 
 .mat-menu-panel {
@@ -100,21 +177,27 @@ border-bottom-color: var(--color-1);
 .table-container{
   position: relative;
   height: var(--px-9);
-  overflow: auto;
+}
+
+
+.table-container .add{
+  height: var(--px-1);
+  margin-top: var(--px-2);
+  margin-left: var(--px-3);
 }
 
 table {
     width: var(--per-2);
     padding: var(--px-10) var(--px-11) var(--px-4);
       td.mat-cell{
-      border-color: var(--d-element);
+      border-color: var(--l-element);
       border-bottom-style: none;
     }
     background-color: transparent;
   }
   
   th, td{
-    color: var(--d-text);
+    color: var(--l-text);
     font-size: medium;
   }
   
