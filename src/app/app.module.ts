@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from './material/material.module';
 import { CountryService } from './services/country.service';
@@ -18,7 +17,6 @@ import { DeleteCountryComponent } from './components/delete-country/delete-count
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     HomeComponent,
     EditCountryComponent,
     AddCountryComponent,
