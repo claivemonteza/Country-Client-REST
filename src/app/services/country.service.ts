@@ -13,7 +13,7 @@ import {Subject} from 'rxjs';
 })
 export class CountryService {
 
-  private url=environment.apiUrl;
+  private url = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
  
