@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  name: 'prod',
+  apiUrl:'https://country-api-restful.herokuapp.com/'
 };
