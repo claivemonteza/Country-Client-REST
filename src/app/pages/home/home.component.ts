@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   dataSource: MatTableDataSource<Country>;
   listCountry:any;
   displayedColumns: string[] = ['name', 'capital', 'region', 'subregion', 'area','options'];
- 
+
   @ViewChild(MatSort) sort: MatSort;
   static dataSource: any;
   
@@ -44,9 +44,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }else{
       if(mode==='edit'){
         this.openDialog(country, EditCountryComponent, '60%');
-      }else{
-        this.openDialog(country, DeleteCountryComponent, '28%');
       }
+    }
+  }
+
+  deleteCountry(event, country: Country, mode: string){
+    event.stopPropagation();
+    if(mode==='delete'){
+    this.openDialog(country, DeleteCountryComponent, '28%');
     }
   }
 

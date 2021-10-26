@@ -13,7 +13,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatSortModule} from '@angular/material/sort';
-
+import {MatSelectModule} from '@angular/material/select';
 
 const MaterialComponents = [
   MatAutocompleteModule,
@@ -25,6 +25,7 @@ const MaterialComponents = [
   MatListModule,
   MatMenuModule,
   MatPaginatorModule,
+  MatSelectModule,
   MatSliderModule,
   MatTableModule,
   MatSortModule,

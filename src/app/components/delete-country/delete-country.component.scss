@@ -1,18 +1,18 @@
-::ng-deep {
+/*::ng-deep {
     .mat-dialog-container {
       background: var(--d-element);
     }
-  }
+  }*/
   
   .dialog-header {
-    background-color: var(--d-element);
+   /* background-color: var(--d-element);*/
     display: table;
     table-layout: fixed;
     width: var(--per-2);
   }
   
   p{
-    color:var(--white);
+    /* color:var(--white); */
   }
   
   .dialog-header-title {
@@ -27,7 +27,7 @@
     font-weight: bold;
     letter-spacing: 0;
     line-height: var(--rem-7);
-    color: var(--d-text);
+   /* color: var(--d-text);*/
     word-wrap: break-word;
   }
   
