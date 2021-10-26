@@ -14,7 +14,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class AddCountryComponent implements OnInit {
 
-  title="Add Country";
+  title="New Country";
   country?:Country;
 
   constructor(private countryService: CountryService, public dialogRef: MatDialogRef<AddCountryComponent>,
