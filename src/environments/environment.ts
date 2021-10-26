@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   name: 'dev',
-  api:'https://country-api-restful.herokuapp.com/'
+  api:'https://country-api-restful.herokuapp.com'
 };
 
 /*
