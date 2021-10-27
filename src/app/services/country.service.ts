@@ -13,7 +13,7 @@ import {Subject} from 'rxjs';
 })
 export class CountryService {
 
-  private url = environment.api;
+  private url = 'https://country-api-restful.herokuapp.com';
 
   constructor(private http: HttpClient) { }
  
