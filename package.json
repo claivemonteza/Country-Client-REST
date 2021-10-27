@@ -1,6 +1,6 @@
 {
   "name": "country-client-rest",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "scripts": {
     "heroku-postbuild": "ng build --prod",
     "ng": "ng",
