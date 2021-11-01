@@ -18,3 +18,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Live Site
 https://restcountries-91e47.web.app/
 
+### API
+https://country-api-restful.herokuapp.com/restcountries/v1/countries
+
