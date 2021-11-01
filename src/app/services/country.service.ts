@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Country } from 'src/app/model/country.model';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 
 import {Subject} from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -13,7 +13,7 @@ import {Subject} from 'rxjs';
 })
 export class CountryService {
 
-  private url = 'https://country-api-restful.herokuapp.com';
+  private url = `${environment.api}`;
 
   constructor(private http: HttpClient) { }
  
