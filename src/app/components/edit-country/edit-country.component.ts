@@ -27,7 +27,7 @@ export class EditCountryComponent implements OnInit {
   }
 
   public onUpdateCountry(country: Country): void {
-    this.countryService.updateCountry(country).subscribe(
+    this.countryService.updateCountry(country, country.id).subscribe(
       (response: Country) => {
         this.cancel();
       },
