@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   name:'dev',
-  api:'https://country-api-restful.herokuapp.com/restcountries/v1/countries'
+  api:'http://localhost:8080/restcountries/v1/countries'
 };
 
 /*
