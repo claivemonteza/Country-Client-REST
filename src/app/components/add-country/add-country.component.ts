@@ -3,9 +3,7 @@ import { Country } from 'src/app/model/country.model';
 import { CountryService } from 'src/app/services/country.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NgForm } from '@angular/forms';
-import { HomeComponent } from 'src/app/pages/home/home.component';
 import { HttpErrorResponse } from '@angular/common/http';
-import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-add-country',
@@ -24,9 +22,9 @@ export class AddCountryComponent implements OnInit {
   
     ngOnInit(): void {}
   
-    list(): void {
-      this.dialogRef.close(AddCountryComponent);
+    cancel(): void {
       this.countryService.filter('Add click');
+       this.dialogRef.close(AddCountryComponent);
     }
   
     public submit(addForm: NgForm): void {
@@ -34,7 +32,7 @@ export class AddCountryComponent implements OnInit {
       this.countryService.addCountry(addForm.value).subscribe(
         (response: Country) => {
           addForm.reset();
-          this.list();
+          this.cancel();
         },
         (error: HttpErrorResponse) => {
           alert(error.message);

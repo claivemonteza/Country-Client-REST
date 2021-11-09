@@ -33,6 +33,7 @@ export class EditCountryComponent implements OnInit {
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
+        this.cancel();
       }
     );
   }
