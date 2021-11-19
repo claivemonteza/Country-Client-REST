@@ -1,0 +1,10 @@
+<div fxFlexLayout="row" fxLayoutAlign="center">
+    <button mat-stroked-button [matMenuTriggerFor]="menu">Export as..
+        <mat-icon class="menuicon">keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="exportAsXLSX()">Excel</button>
+        <button mat-menu-item (click)="exportAsCSV()">CSV</button>
+        <button mat-menu-item (click)="exportAsXML()">XML</button>
+    </mat-menu>
+</div>
