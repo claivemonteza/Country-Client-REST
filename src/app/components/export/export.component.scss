@@ -1,15 +1,11 @@
-.mat-stroked-button:not(.mat-button-disabled) {
-    border-color: var(--d-element);
-}
-
 .mat-menu-panel {
-    margin-top: 15px;
-    margin-left: -11px;
+  margin-top: 15px;
+  margin-left: -11px;
 }
 
 .mat-menu-content:not(:empty) {
-    padding-top: 0px;
-    padding-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 :host-context(.light) {
@@ -20,7 +16,7 @@
 
   .mat-stroked-button:not(.mat-button-disabled) {
     border-color: var(--l-element);
-}
+  }
 }
 
 :host-context(.dark) {
@@ -30,6 +26,6 @@
   }
 
   .mat-stroked-button:not(.mat-button-disabled) {
-    border-color: var(--d-element);
-}
+    border-color: var(--d-bg);
+  }
 }

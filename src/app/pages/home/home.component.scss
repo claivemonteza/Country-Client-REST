@@ -1,38 +1,30 @@
-.sidebar {
-  display: flex;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-}
-
 mat-toolbar {
   display: block;
   position: sticky;
   top: 0;
-  color: var(--color-1);
-  height: 74px;
-
-  @media (min-width: 540px) {
-    display: flex;
+  padding: 20px;
+  height: 130px;
+  @media (min-width: 376px) {
+    margin: 0rem 0rem;
+    padding-bottom: 0px;
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
-
 .left {
   display: flex;
-  padding-top: var(--rem-2);
+  justify-content: space-between;
+  // padding-top: var(--rem-2);
 }
 
 .left .logo {
   display: flex;
   margin-right: var(--rem-3);
-  margin-bottom: var(--rem-4);
 }
 
 .logo img {
-  width: var(--px-12);
+  width: var(--px-21);
 }
 
 .left h1 {
@@ -41,7 +33,6 @@ mat-toolbar {
   font-weight: bold;
   font-family: montserrat, sans-serif;
   font-size: var(--px-13);
-  margin-top: var(--rem-5);
 }
 
 .left ul,
@@ -71,11 +62,10 @@ mat-toolbar {
     color: var(--color-1);
   }
   .left ul {
-    margin-left: var(--px-15);
-    margin-top: var(--rem-5);
+    margin-left: var(--px-22);
   }
   .left h1 + ul {
-    margin-left: var(--px-15);
+    margin-left: var(--px-6);
   }
   .left li:last-child {
     border-right: 0;
@@ -84,8 +74,7 @@ mat-toolbar {
     padding: var(--px-18) var(--px-17);
     text-decoration: none;
     margin-top: var(--px-18);
-    margin-left: 10px;
-    border-left: 2px solid;
+    //  border-left: 1px solid;
   }
 }
 
@@ -96,34 +85,36 @@ mat-toolbar {
 
 .fa-github::before {
   content: "\f09b";
-  font-size: var(--px-19);
+  font-size: var(--px-6);
   color: var(--color-1);
 }
 
-.theme{
+.fa-moon-o:before {
+  content: "\f186";
+  font-size: var(--px-6);
+  color: var(--color-1);
+}
+
+.theme {
   cursor: pointer;
   font-size: 15px;
 }
-.opcao{
+.opcao {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
 }
 
-.select {
-  width: 50px;
-  margin-top: 40px;
-  margin-right: 30px;
+.opcao .add {
+  height: var(--px-1);
+  margin-top: var(--px-2);
+  margin-left: var(--px-3);
 }
 
 mat-form-field {
-  width: 100%;
+  width: 45%;
   font-size: medium;
-
-  @media (min-width: 540px) {
-    width: var(--per-1);
-    margin-left: 10rem;
-  }
+  margin-left: var(--rem-8);
 }
 
 mat-form-field mat-icon {
@@ -133,7 +124,6 @@ mat-form-field mat-icon {
 mat-icon {
   color: var(--color-1);
 }
-
 
 .mat-toolbar .mat-focused {
   color: var(--color-1);
@@ -169,24 +159,12 @@ th.mat-header-cell {
   border-bottom-color: var(--color-1);
 }
 
-.table-container {
-  position: relative;
-  /*height: var(--px-9);*/
-}
-
-.table-container .add {
-  height: var(--px-1);
-  margin-top: var(--px-2);
-  margin-left: var(--px-3);
-}
-
 table {
-  width: var(--per-2);
-  padding: var(--px-10) var(--px-11) var(--px-4);
+  width: 100%;
+  z-index: 1;
   td.mat-cell {
     border-bottom-style: none;
   }
-  background-color: transparent;
 }
 
 th,
@@ -197,180 +175,124 @@ td {
 tr.mat-header-row {
   position: sticky;
   top: 64px;
-  color: var(--white);
 }
 
-th.mat-sort-header-sorted {
-  color: var(--white);
-}
-
-th.mat-header-cell mat-sort-header-arrow {
-  color: var(--white);
-}
-
-tr.mat-row {
+tr.mat-row,
+tr.mat-footer-row {
+  height: 48px;
   cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 :host-context(.light) {
-  
   .sidebar {
     box-shadow: 0px 0.3px 0.4px;
   }
 
   mat-toolbar {
     background: var(--l-element);
-  }
-  
-  .left li a {
     color: var(--l-text);
   }
-  
-  @media (min-width: 360px) { 
-    .left h1 + ul {
-      border-left: solid var(--px-16) var(--d-text);
-    }
+
+  .left li a {
+    color: var(--l-text);
+    border-left: solid 1px var(--l-text);
   }
-  
+
   mat-form-field-label,
   mat-label {
     color: var(--l-text);
   }
-  
+
   .mat-input-element::placeholder {
     color: var(--l-text);
   }
-  
+
   .mat-form-field.mat-focused .mat-form-field-label {
     color: var(--l-text);
   }
-  
+
   .mat-form-field.appearence-legacy .mat-form-field-label {
     color: var(--l-text);
   }
-  
+
   .mat-toolbar .mat-input-element {
     caret-color: var(--l-text);
   }
-  
+
   .mat-input-element {
     color: var(--l-text);
   }
-  
+
   .mat-stroked-button:not(.mat-button-disabled) {
     border-color: var(--l-element);
   }
-  
+
   table {
     td.mat-cell {
       border-color: var(--l-element);
     }
+    background-color: var(--l-element);
   }
-  
+
   th,
   td {
     color: var(--l-text);
   }
-  
-  tr.mat-header-row {
-    color: var(--white);
-  }
-  
-  th.mat-sort-header-sorted {
-    color: var(--white);
-  }
-  
-  th.mat-header-cell mat-sort-header-arrow {
-    color: var(--white);
-  }
 }
 
-
-
-
-
-
-
 :host-context(.dark) {
-  .sidebar{
+  .sidebar {
     box-shadow: 0px 0.5px 2px #000000;
   }
 
   mat-toolbar {
     background: var(--d-bg);
-  }
-  
-  .left li a {
     color: var(--d-text);
   }
-  
-  @media (min-width: 360px) { 
-    .left h1 + ul {
-      border-left: solid var(--px-16) var(--l-text);
-    }
+
+  .left li a {
+    color: var(--d-text);
+    border-left: solid 1px var(--d-text);
   }
-  
+
   mat-form-field-label,
   mat-label {
     color: var(--d-text);
   }
-  
+
   .mat-input-element::placeholder {
     color: var(--d-text);
   }
-  
+
   .mat-form-field.mat-focused .mat-form-field-label {
     color: var(--d-text);
   }
-  
+
   .mat-form-field.appearence-legacy .mat-form-field-label {
     color: var(--d-text);
   }
-  
+
   .mat-toolbar .mat-input-element {
     caret-color: var(--d-text);
   }
-  
+
   .mat-input-element {
     color: var(--d-text);
   }
-  
+
   .mat-stroked-button:not(.mat-button-disabled) {
     border-color: var(--d-element);
   }
-  
+
   table {
     td.mat-cell {
       border-color: var(--d-element);
     }
+    background-color: var(--d-bg);
   }
-  
+
   th,
   td {
     color: var(--d-text);
-  }
-  
-  tr.mat-header-row {
-    color: var(--white);
-  }
-  
-  th.mat-sort-header-sorted {
-    color: var(--white);
-  }
-  
-  th.mat-header-cell mat-sort-header-arrow {
-    color: var(--white);
   }
 }
