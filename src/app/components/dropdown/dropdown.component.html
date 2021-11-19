@@ -1,0 +1,8 @@
+<div fxFlexLayout="row" fxLayoutAlign="center">
+    <button mat-stroked-button [matMenuTriggerFor]="menu">Filter by region
+      <mat-icon class="menuicon">keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item *ngFor="let value of regionOptions" (click)="select(value)">{{ value }}</button>
+    </mat-menu>
+  </div>

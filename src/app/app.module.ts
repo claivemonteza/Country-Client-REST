@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { EditCountryComponent } from './components/edit-country/edit-country.component';
 import { AddCountryComponent } from './components/add-country/add-country.component';
 import { DeleteCountryComponent } from './components/delete-country/delete-country.component';
+import { ExportComponent } from './components/export/export.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 
 @NgModule({
@@ -21,6 +23,9 @@ import { DeleteCountryComponent } from './components/delete-country/delete-count
     EditCountryComponent,
     AddCountryComponent,
     DeleteCountryComponent,
+    DropdownComponent,
+    ExportComponent
+
   ],
   imports: [
     BrowserModule,
