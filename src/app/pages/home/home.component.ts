@@ -7,37 +7,32 @@ import { CountryService } from 'src/app/services/country.service';
 import { AddCountryComponent } from 'src/app/components/add-country/add-country.component';
 import { EditCountryComponent } from 'src/app/components/edit-country/edit-country.component';
 import { DeleteCountryComponent } from 'src/app/components/delete-country/delete-country.component';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 
-
+  source: Country[] = [];
   dataSource: MatTableDataSource<Country>;
-  listCountry:any;
   displayedColumns: string[] = ['name', 'capital', 'region', 'subregion', 'area','options'];
-
-  @ViewChild(MatSort) sort: MatSort;
-  static dataSource: any;
   
-  constructor(private countryService: CountryService, public dialog: MatDialog) { 
+  constructor(private themeService: ThemeService, private countryService: CountryService, public dialog: MatDialog) { 
     this.dataSource = new MatTableDataSource<Country>([]);
-    this.countryService.listen().subscribe((m:any)=>{
-      this.countries();
-    })
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
   }
 
   ngOnInit(): void {
-    this.countries();
+    this.countryService.getAllCountries().subscribe(data => {
+      this.source = data;
+      this.dataSource.data = data;
+    });
   }
   
+
+  /* Open Dialog box */
   displayDialog(country: Country, mode: string){
     if(mode==='add'){
       this.openDialog(country, AddCountryComponent, '60%');
@@ -64,17 +59,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
+  /* Search*/
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  countries(){
-    this.countryService.getAllCountries().subscribe(data => {
-      this.dataSource.data = data;
-    });
+  filter(filter: string) {
+    if(filter === 'All') {
+      this.dataSource.data = this.source;
+    }else {
+      this.dataSource.data = this.source.filter((country) => country.region === filter);
+    }
+  }
+
+  /* Change theme */
+  toogleTheme() {
+    this.themeService.toggleMode();
   }
  
-   static setDataSource(data:Country[]){
-     this.dataSource.data = data;
-  }
 }
