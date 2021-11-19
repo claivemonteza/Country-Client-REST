@@ -1,79 +1,73 @@
-<div>
-    <div class="sidebar">
-        <mat-toolbar fxFlexLayout="row wrap" fxLayoutGap="20px">
-            <div class='left'>
-                <div class="logo">
-                    <img src="../../../assets/images/global.png" alt="World">
-                    <h1>Country REST</h1>
-                </div>
-                <ul>
-                    <li><a class="fa fa-github" href='https://github.com/claivemonteza/Country-Client-REST.git'>View the
-                            project</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="theme" (click)="toogleTheme()">
-                <span class="fa fa-moon-o"></span>
-                {{' '}}
-                <span> Dark mode</span>
-            </div>
-            
-        </mat-toolbar>
-    </div>
-    <div class="table-container">
-        <div class="opcao">
-            <button class="add" mat-raised-button (click)="displayDialog(null,'add')">
-                <mat-icon>add</mat-icon>
-                New
-            </button>
-            <mat-form-field>
-                <mat-label>Search</mat-label>
-                <mat-icon matPrefix>search</mat-icon>
-                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="">
-            </mat-form-field>
-            <div class="right" fxFlexLayout="row" fxLayoutAlign="center">
-                <app-export></app-export>
-                <app-dropdown  (filter)="filter($event)"></app-dropdown>
-            </div>
+<mat-toolbar fxFlexLayout="row wrap" fxLayoutGap="20px">
+    <div class='left'>
+        <div class="logo">
+            <img src="../../../assets/images/global.png" alt="World">
+            <h1>REST Countries</h1>
+            <ul>
+                <li><a class="fa fa-github" href='https://github.com/claivemonteza/Country-Client-REST.git'>View the
+                        project</a>
+                </li>
+            </ul>
         </div>
-      
-        <table mat-table [dataSource]="dataSource" matSort>
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container>
 
-            <ng-container matColumnDef="capital">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Capital </th>
-                <td mat-cell *matCellDef="let element"> {{element.capital}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="region">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Region </th>
-                <td mat-cell *matCellDef="let element">{{element.region}}</td>
-            </ng-container>
-
-            <ng-container matColumnDef="subregion">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Subregion </th>
-                <td mat-cell *matCellDef="let element"> {{element.subregion}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="area">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Area </th>
-                <td mat-cell *matCellDef="let element"> {{element.area}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="options">
-                <th mat-header-cell *matHeaderCellDef>Options</th>
-                <td mat-cell *matCellDef="let element">
-                    <button (click)="deleteCountry($event, element, 'delete')" mat-icon-button
-                        aria-label="Example icon button with a vertical three dot icon">
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </td>
-            </ng-container>
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="displayDialog(row,'edit')"></tr>
-        </table>
+        <div class="theme" (click)="toogleTheme()">
+            <span class="fa fa-moon-o"></span>
+            {{' '}}
+            <span> Dark mode</span>
+        </div>
     </div>
-</div>
+
+    <div class="opcao">
+        <button class="add" mat-raised-button (click)="displayDialog(null,'add')">
+            <mat-icon>add</mat-icon>
+            New
+        </button>
+        <mat-form-field>
+            <mat-label>Search</mat-label>
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="">
+        </mat-form-field>
+        <div class="right" fxFlexLayout="row" fxLayoutAlign="center">
+            <app-export></app-export>
+            <app-dropdown (filter)="filter($event)"></app-dropdown>
+        </div>
+    </div>
+</mat-toolbar>
+<table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="capital">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Capital </th>
+        <td mat-cell *matCellDef="let element"> {{element.capital}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="region">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Region </th>
+        <td mat-cell *matCellDef="let element">{{element.region}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="subregion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Subregion </th>
+        <td mat-cell *matCellDef="let element"> {{element.subregion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="area">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Area </th>
+        <td mat-cell *matCellDef="let element"> {{element.area}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="options">
+        <th mat-header-cell *matHeaderCellDef>Options</th>
+        <td mat-cell *matCellDef="let element">
+            <button (click)="deleteCountry($event, element, 'delete')" mat-icon-button
+                aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="displayDialog(row,'edit')"></tr>
+</table>
