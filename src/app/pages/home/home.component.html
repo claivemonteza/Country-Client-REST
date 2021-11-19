@@ -1,4 +1,4 @@
-<div class="container" id="main-container">
+<div>
     <div class="sidebar">
         <mat-toolbar fxFlexLayout="row wrap" fxLayoutGap="20px">
             <div class='left'>
@@ -12,18 +12,31 @@
                     </li>
                 </ul>
             </div>
+            <div class="theme" (click)="toogleTheme()">
+                <span class="fa fa-moon-o"></span>
+                {{' '}}
+                <span> Dark mode</span>
+            </div>
+            
+        </mat-toolbar>
+    </div>
+    <div class="table-container">
+        <div class="opcao">
+            <button class="add" mat-raised-button (click)="displayDialog(null,'add')">
+                <mat-icon>add</mat-icon>
+                New
+            </button>
             <mat-form-field>
                 <mat-label>Search</mat-label>
                 <mat-icon matPrefix>search</mat-icon>
                 <input matInput (keyup)="applyFilter($event.target.value)" placeholder="">
             </mat-form-field>
-        </mat-toolbar>
-    </div>
-    <div class="table-container">
-        <button class="add" mat-raised-button (click)="displayDialog(null,'add')">
-            <mat-icon>add</mat-icon>
-            New
-        </button>
+            <div class="right" fxFlexLayout="row" fxLayoutAlign="center">
+                <app-export></app-export>
+                <app-dropdown  (filter)="filter($event)"></app-dropdown>
+            </div>
+        </div>
+      
         <table mat-table [dataSource]="dataSource" matSort>
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
